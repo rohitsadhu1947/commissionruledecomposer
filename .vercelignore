@@ -1,0 +1,33 @@
+# Never deploy raw/sensitive source data or local-only artifacts.
+# The serverless app only needs api/ + vercel.json + requirements.txt.
+*.xlsx
+*.csv
+*.pdf
+
+# Local-only scripts (build/extract/serve) — not used at runtime.
+# NOTE: extract_chola / extract_godigit / extract_misc_4w + catalog_schema /
+# geo_lookup / uploader ARE deployed: they power the /upload endpoint
+# (in-memory parsing of monthly grid uploads; raw xlsx still never deployed).
+build_deploy_data.py
+build_rule_catalog.py
+export_approved.py
+geo_normalize.py
+poc_tw_extractor.py
+extract_4w_cv.py
+rto_clusters.py
+resolution_engine.py
+serve.py
+test_eligibility.py
+test_poc.py
+
+# Local JSON outputs (runtime reads api/_data/*.json instead)
+poc_tw_rules.json
+poc_tw_notes_rules.json
+rules_catalog.json
+rules_catalog_approved.json
+rules_review.json
+
+# Docs / decks
+ARCHITECTURE.md
+NOTES_CATALOG.md
+*.html

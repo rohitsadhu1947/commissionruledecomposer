@@ -1,0 +1,103 @@
+{
+  "SBI-TW-0025-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "rohit",
+    "ts": "2026-06-04T19:56:09",
+    "pay_in_pct": 36,
+    "reason": "verified vs grid AD38"
+  },
+  "SBI-TW-0026-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "rohit",
+    "ts": "2026-06-04T19:56:09"
+  },
+  "SBI-TW-ELIG-TW2-001": {
+    "status": "REJECTED",
+    "reviewer": "rohit",
+    "ts": "2026-06-04T19:56:09"
+  },
+  "SBI-TW-0001-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:10",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0001-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:11",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0002-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:15",
+    "pay_in_pct": 23.5
+  },
+  "SBI-TW-0002-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:18",
+    "pay_in_pct": 23.5
+  },
+  "SBI-TW-0003-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:20",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0003-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:21",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0004-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:25",
+    "pay_in_pct": 23.5
+  },
+  "SBI-TW-0004-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:26",
+    "pay_in_pct": 23.5
+  },
+  "SBI-TW-0005-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:27",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0005-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:28",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0006-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:30",
+    "pay_in_pct": 23.5
+  },
+  "SBI-TW-0006-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:32",
+    "pay_in_pct": 23.5
+  },
+  "SBI-TW-0007-COMP": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:33",
+    "pay_in_pct": 35
+  },
+  "SBI-TW-0007-SAOD": {
+    "status": "CONFIRMED",
+    "reviewer": "console",
+    "ts": "2026-06-04T19:57:34",
+    "pay_in_pct": 35
+  }
+}

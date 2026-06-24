@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SK Finance × Ensuredit Embed — Ideal-State Swimlane (v2)</title>
+<style>
+  :root{ --app:#0891b2; --sk:#2563eb; --embed:#7c3aed; --ins:#059669; --flow:#334155; --api:#2563eb; --ink:#0f172a; --muted:#475569; }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#f8fafc;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:1780px;margin:0 auto;padding:24px;}
+  h1{font-size:22px;margin:0 0 4px;}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 16px;}
+  .legend{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:12px;color:var(--muted);margin:0 0 14px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .swatch{width:14px;height:14px;border-radius:3px;display:inline-block;}
+  .line{width:26px;height:0;border-top:2px solid var(--flow);display:inline-block;}
+  .line.dash{border-top:2px dashed var(--api);}
+  .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:auto;}
+  svg{display:block;width:100%;height:auto;min-width:1300px;}
+  .scenarios{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;}
+  .sc{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;}
+  .sc h3{margin:0 0 8px;font-size:15px;}
+  .sc.full h3{color:var(--ins);}
+  .sc.partial h3{color:#d97706;}
+  .sc ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:#334155;line-height:1.5;}
+  .pillkey{display:inline-block;font-size:11px;font-weight:600;color:#fff;padding:2px 8px;border-radius:999px;}
+  .qbox{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .q{border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;background:#fff;}
+  .q.open{border-top:5px solid #d97706;}
+  .q.confirmed{border-top:5px solid var(--ins);}
+  .q h4{margin:0 0 6px;font-size:14px;}
+  .q.open h4{color:#b45309;}
+  .q.confirmed h4{color:var(--ins);}
+  .q p{margin:4px 0 0;font-size:12.5px;color:#334155;line-height:1.5;}
+  .note{margin-top:16px;background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;font-size:13px;color:#92400e;}
+  .foot{margin-top:14px;font-size:11px;color:#94a3b8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SK Finance × Ensuredit Embed — Insurance Embed Process (Ideal State · v2)</h1>
+  <p class="sub">Quote on loan approval → in-app insurer selection with Good Health Declaration &amp; OTP → hold pattern → disbursement-triggered policy issuance → customer delivery.</p>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:var(--app)"></span> SK Finance App</span>
+    <span><span class="swatch" style="background:var(--sk)"></span> SK Finance LMS/LOS</span>
+    <span><span class="swatch" style="background:var(--embed)"></span> Ensuredit Embed</span>
+    <span><span class="swatch" style="background:var(--ins)"></span> Insurer(s)</span>
+    <span><span class="line"></span> Process flow</span>
+    <span><span class="line dash"></span> API call</span>
+    <span><span class="pillkey" style="background:#f59e0b">Status</span> Embed status change</span>
+  </div>
+
+  <div class="card">
+  <svg viewBox="0 0 1720 740" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#334155"/></marker>
+      <marker id="arrowApi" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker>
+    </defs>
+
+    <!-- Lane bands -->
+    <rect x="0" y="60"  width="1720" height="165" fill="#ecfeff"/>
+    <rect x="0" y="225" width="1720" height="165" fill="#eef4fb"/>
+    <rect x="0" y="390" width="1720" height="165" fill="#f3eefb"/>
+    <rect x="0" y="555" width="1720" height="165" fill="#eafaf2"/>
+    <rect x="0" y="60"  width="170" height="165" fill="#0891b2"/>
+    <rect x="0" y="225" width="170" height="165" fill="#2563eb"/>
+    <rect x="0" y="390" width="170" height="165" fill="#7c3aed"/>
+    <rect x="0" y="555" width="170" height="165" fill="#059669"/>
+    <text x="85" y="128" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">SK Finance</text>
+    <text x="85" y="146" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">App</text>
+    <text x="85" y="164" fill="#cffafe" font-size="10" text-anchor="middle">(Agent / Customer UI)</text>
+    <text x="85" y="301" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">SK Finance</text>
+    <text x="85" y="319" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">LMS / LOS</text>
+    <text x="85" y="466" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">Ensuredit</text>
+    <text x="85" y="484" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">Embed</text>
+    <text x="85" y="642" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">Insurer(s)</text>
+
+    <!-- centers A142 B307 C472 D637 ; box h62 ; tops A111 B276 C441 D606 ; bottoms A173 B338 C503 D668 -->
+    <!-- cols left:190,405,620,835,1050,1265,1480 ; cx:265,480,695,910,1125,1340,1555 -->
+
+    <!-- A1 L1->E1 --><line x1="265" y1="338" x2="265" y2="437" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A2 E1->E2 --><line x1="340" y1="472" x2="401" y2="472" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- A3 E2->I1 --><line x1="480" y1="503" x2="480" y2="602" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A4 I1->E3 --><line x1="555" y1="624" x2="690" y2="505" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A5 E3->L2 --><line x1="695" y1="441" x2="695" y2="342" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A6 L2->App1 --><line x1="695" y1="276" x2="695" y2="177" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- A7 App1->App2 --><line x1="770" y1="142" x2="831" y2="142" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- A8 App2->L3 --><line x1="910" y1="173" x2="1118" y2="274" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- A9 L3->E4 --><line x1="1125" y1="338" x2="1125" y2="437" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A10 E4->L4 --><line x1="1200" y1="460" x2="1336" y2="342" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- A11 L4->E5 --><line x1="1340" y1="338" x2="1340" y2="437" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A12 E5->I2 --><line x1="1340" y1="503" x2="1340" y2="602" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A13 I2->E6 --><line x1="1415" y1="624" x2="1550" y2="505" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A14 E6->L5 --><line x1="1555" y1="441" x2="1555" y2="342" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowApi)"/>
+    <!-- A15 L5->App3 --><line x1="1555" y1="276" x2="1555" y2="177" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <text x="272" y="393" fill="#1d4ed8" font-size="10.5" font-style="italic">POST quote dataset</text>
+    <text x="487" y="558" fill="#1d4ed8" font-size="10.5" font-style="italic">POST /quote</text>
+    <text x="568" y="588" fill="#1d4ed8" font-size="10.5" font-style="italic">quotes × N</text>
+    <text x="702" y="393" fill="#1d4ed8" font-size="10.5" font-style="italic">quotes → LMS/LOS</text>
+    <text x="700" y="232" fill="#475569" font-size="10.5" font-style="italic">surface to app</text>
+    <text x="930" y="232" fill="#475569" font-size="10.5" font-style="italic">selection + GHD + OTP</text>
+    <text x="1132" y="393" fill="#1d4ed8" font-size="10.5" font-style="italic">POST GHD + OTP</text>
+    <text x="1208" y="408" fill="#b45309" font-size="10.5" font-style="italic">⏳ at disbursement</text>
+    <text x="1347" y="393" fill="#1d4ed8" font-size="10.5" font-style="italic">POST /issue-policy</text>
+    <text x="1347" y="558" fill="#1d4ed8" font-size="10.5" font-style="italic">POST /policy-issuance</text>
+    <text x="1428" y="588" fill="#1d4ed8" font-size="10.5" font-style="italic">policy doc</text>
+    <text x="1562" y="393" fill="#1d4ed8" font-size="10.5" font-style="italic">policy doc + status</text>
+    <text x="1560" y="232" fill="#475569" font-size="10.5" font-style="italic">forward to app</text>
+
+    <!-- status pills -->
+    <g><rect x="1015" y="510" width="220" height="22" rx="11" fill="#f59e0b"/><text x="1125" y="525" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">On Hold – Awaiting Disbursement</text></g>
+    <g><rect x="1490" y="510" width="130" height="22" rx="11" fill="#16a34a"/><text x="1555" y="525" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">Policy Issued</text></g>
+
+    <!-- BOXES (h62, w150) -->
+    <!-- 1 L-1 --><g><rect x="190" y="276" width="150" height="62" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="190" cy="276" r="11" fill="#2563eb"/><text x="190" y="280" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">1</text><text x="203" y="298" font-size="10.5">Loan Approved →</text><text x="203" y="313" font-size="10.5">trigger Get Quote</text><text x="203" y="328" font-size="10.5">(collect dataset)</text></g>
+    <!-- 2 E-1 --><g><rect x="190" y="441" width="150" height="62" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2"/><circle cx="190" cy="441" r="11" fill="#7c3aed"/><text x="190" y="445" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">2</text><text x="203" y="470" font-size="10.5">Receive &amp; process</text><text x="203" y="485" font-size="10.5">quote dataset</text></g>
+    <!-- 3 E-2 --><g><rect x="405" y="441" width="150" height="62" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2"/><circle cx="405" cy="441" r="11" fill="#7c3aed"/><text x="405" y="445" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">3</text><text x="418" y="470" font-size="10.5">Call insurer quote</text><text x="418" y="485" font-size="10.5">APIs (all fields)</text></g>
+    <!-- 4 I-1 --><g><rect x="405" y="606" width="150" height="62" rx="8" fill="#fff" stroke="#059669" stroke-width="2"/><circle cx="405" cy="606" r="11" fill="#059669"/><text x="405" y="610" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">4</text><text x="418" y="635" font-size="10.5">Generate &amp; return</text><text x="418" y="650" font-size="10.5">multiple quotes</text></g>
+    <!-- 5 E-3 --><g><rect x="620" y="441" width="150" height="62" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2"/><circle cx="620" cy="441" r="11" fill="#7c3aed"/><text x="620" y="445" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">5</text><text x="633" y="470" font-size="10.5">Collate quotes &amp;</text><text x="633" y="485" font-size="10.5">return to LMS/LOS</text></g>
+    <!-- 6 L-2 --><g><rect x="620" y="276" width="150" height="62" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="620" cy="276" r="11" fill="#2563eb"/><text x="620" y="280" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">6</text><text x="633" y="305" font-size="10.5">Receive quotes →</text><text x="633" y="320" font-size="10.5">surface to app</text></g>
+    <!-- 7 App-1 --><g><rect x="620" y="111" width="150" height="62" rx="8" fill="#fff" stroke="#0891b2" stroke-width="2"/><circle cx="620" cy="111" r="11" fill="#0891b2"/><text x="620" y="115" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">7</text><text x="633" y="140" font-size="10.5">Display quotes to</text><text x="633" y="155" font-size="10.5">customer / agent</text></g>
+    <!-- 8 App-2 --><g><rect x="835" y="111" width="150" height="62" rx="8" fill="#fff" stroke="#0891b2" stroke-width="2"/><circle cx="835" cy="111" r="11" fill="#0891b2"/><text x="835" y="115" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">8</text><text x="848" y="133" font-size="10.5">Select insurer +</text><text x="848" y="148" font-size="10.5">Good Health Decl.</text><text x="848" y="163" font-size="10.5">+ OTP verification</text></g>
+    <!-- 9 L-3 --><g><rect x="1050" y="276" width="150" height="62" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="1050" cy="276" r="11" fill="#2563eb"/><text x="1050" y="280" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">9</text><text x="1063" y="305" font-size="10.5">Capture from app →</text><text x="1063" y="320" font-size="10.5">push to Ensuredit</text></g>
+    <!-- 10 E-4 --><g><rect x="1050" y="441" width="150" height="62" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2"/><circle cx="1050" cy="441" r="11" fill="#7c3aed"/><text x="1050" y="445" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">10</text><text x="1063" y="470" font-size="10.5">Mark insurer; store</text><text x="1063" y="485" font-size="10.5">GHD+OTP; on HOLD</text></g>
+    <!-- 11 L-4 --><g><rect x="1265" y="276" width="150" height="62" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="1265" cy="276" r="11" fill="#2563eb"/><text x="1265" y="280" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">11</text><text x="1278" y="298" font-size="10.5">Loan disbursement</text><text x="1278" y="313" font-size="10.5">triggered → request</text><text x="1278" y="328" font-size="10.5">issuance</text></g>
+    <!-- 12 E-5 --><g><rect x="1265" y="441" width="150" height="62" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2"/><circle cx="1265" cy="441" r="11" fill="#7c3aed"/><text x="1265" y="445" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">12</text><text x="1278" y="470" font-size="10.5">Trigger issuance →</text><text x="1278" y="485" font-size="10.5">call insurer API</text></g>
+    <!-- 13 I-2 --><g><rect x="1265" y="606" width="150" height="62" rx="8" fill="#fff" stroke="#059669" stroke-width="2"/><circle cx="1265" cy="606" r="11" fill="#059669"/><text x="1265" y="610" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">13</text><text x="1278" y="635" font-size="10.5">Issue policy &amp;</text><text x="1278" y="650" font-size="10.5">return policy doc</text></g>
+    <!-- 14 E-6 --><g><rect x="1480" y="441" width="150" height="62" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2"/><circle cx="1480" cy="441" r="11" fill="#7c3aed"/><text x="1480" y="445" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">14</text><text x="1493" y="470" font-size="10.5">Push policy doc +</text><text x="1493" y="485" font-size="10.5">status to LMS/LOS</text></g>
+    <!-- 15 L-5 --><g><rect x="1480" y="276" width="150" height="62" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/><circle cx="1480" cy="276" r="11" fill="#2563eb"/><text x="1480" y="280" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">15</text><text x="1493" y="305" font-size="10.5">Receive policy →</text><text x="1493" y="320" font-size="10.5">forward to app</text></g>
+    <!-- 16 App-3 --><g><rect x="1480" y="111" width="150" height="62" rx="8" fill="#fff" stroke="#0891b2" stroke-width="2"/><circle cx="1480" cy="111" r="11" fill="#0891b2"/><text x="1480" y="115" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">16</text><text x="1493" y="133" font-size="10.5">Store to customer</text><text x="1493" y="148" font-size="10.5">acct / Loan ID;</text><text x="1493" y="163" font-size="10.5">email + SMS</text></g>
+  </svg>
+  </div>
+
+  <div class="qbox" style="grid-template-columns:1fr 1fr 1fr;">
+    <div class="q open">
+      <h4>Q1 (Open) · When do we call the Quote API?</h4>
+      <p><strong>Option A:</strong> at the Loan Approved stage (current assumption). <strong>Option B:</strong> earlier, during the agent's pitch, so the insurance cost can be disclosed to the customer up front. <em>Needs confirmation — sets where Step 1 sits.</em></p>
+    </div>
+    <div class="q confirmed">
+      <h4>Q2 (Confirmed) · What triggers policy issuance?</h4>
+      <p>Issuance fires the moment <strong>loan disbursement is triggered</strong> — never before. Selection, Good Health Declaration and OTP are captured earlier and held.</p>
+    </div>
+    <div class="q open">
+      <h4>Q3 (Open) · Partial / multiple disbursements?</h4>
+      <p>If a loan disburses in tranches — one policy for the full sum, or one per tranche (child chain under the same Loan ID)? <strong>Excluded from this v1 workflow</strong>; to be confirmed.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Hold pattern:</strong> After insurer selection + Good Health Declaration + OTP verification (all in the SK Finance app), Ensuredit stores the data and holds the case as <em>On Hold – Awaiting Disbursement</em>. Issuance only proceeds when disbursement triggers it; the policy is then stored to the customer account / Loan ID and the customer is notified (email + SMS).
+  </div>
+
+  <p class="foot">v1 scope: single (full) disbursement. Lanes: SK Finance App · SK Finance LMS/LOS · Ensuredit Embed · Insurer(s). Solid = process / UI flow, dashed = API call. Embed statuses: Quote Generated → On Hold (Insurer Selected · GHD · OTP) → Policy Issued.</p>
+</div>
+</body>
+</html>
