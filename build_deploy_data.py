@@ -26,6 +26,7 @@ import rto_clusters as rc
 import extract_chola as chola
 import extract_godigit as godigit
 import extract_misc_4w as misc
+import extract_united as united
 
 OUT = os.path.join("api", "_data")
 
@@ -66,6 +67,11 @@ def main():
             r2c, c2s = geo()
             misc_geo[name] = {"rto2clusters": r2c, "cluster2states": c2s}
 
+    # United India — transcribed from a scanned PDF (no Excel; baked, not uploadable)
+    un_rate, un_elig, un_warn = united.extract_rows()
+    rows += un_rate + un_elig
+    warnings += un_warn  # already insurer-tagged
+
     catalog = {
         "meta": {
             "insurers": {
@@ -83,6 +89,9 @@ def main():
                 "HDFC_ERGO": {"source_file": "HDFC_SATP Grid NEW.xlsx"},
                 "ICICI_LOMBARD": {"source_file": "ICICI_Pvt Car Grid_June 26 Final M2B.xlsx",
                                   "grid_version": {"effective_from": "2026-06-01"}},
+                "UNITED_INDIA": {"source_file": "united.pdf (scanned) + email note",
+                                 "grid_version": {"effective_from": "2026-04-01"},
+                                 "note": "transcribed from a scanned PDF; not Excel-uploadable"},
             },
             "counts": {
                 "total": len(rows),

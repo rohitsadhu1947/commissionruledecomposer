@@ -365,7 +365,7 @@ function boot(){
    META=res[0]; RULES=res[1]; CAT=res[2]; OPT=res[3];
    var s=$('state');
    s.innerHTML='<option value="">(any)</option>'+META.states.map(function(x){return '<option>'+esc(x)+'</option>';}).join('');
-   var iorder=['SBI_GENERAL','CHOLA_MS','GODIGIT','ICICI_LOMBARD','HDFC_ERGO','TATA_AIG','CAT_B'];
+   var iorder=['SBI_GENERAL','CHOLA_MS','GODIGIT','ICICI_LOMBARD','HDFC_ERGO','TATA_AIG','UNITED_INDIA','CAT_B'];
    var inss=Object.keys(OPT).sort(function(a,b){return (iorder.indexOf(a)+1||9)-(iorder.indexOf(b)+1||9);});
    fillSel('insurer',inss,false);
    onIns();
